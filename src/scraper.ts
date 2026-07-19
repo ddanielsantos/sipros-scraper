@@ -7,7 +7,15 @@ export async function scrapeSipros(): Promise<ScrapeResult> {
   const browser = await chromium.launch({ headless: true });
   const page: Page = await browser.newPage();
 
-  await page.goto(URL, { waitUntil: "networkidle" });
+  await page.goto(URL, { waitUntil: "load", timeout: 60000 });
+
+  // Aguarda os cards de processos seletivos estarem visíveis no DOM
+  await page.waitForSelector("div.pricing-area div.row > div.col-sm-4.plan.price-one", {
+    timeout: 30000,
+  });
+
+  // Pequena pausa extra para renderização de CSS/classes wow.js
+  await page.waitForTimeout(1500);
 
   const processos: ProcessoSeletivo[] = await page.evaluate(() => {
     const cards = document.querySelectorAll<HTMLDivElement>(
