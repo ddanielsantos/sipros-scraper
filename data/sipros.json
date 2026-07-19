@@ -1,5 +1,596 @@
 {
-  "scraped_at": "",
-  "total": 0,
-  "processos": []
+  "scraped_at": "2026-07-19T17:44:22.276Z",
+  "total": 59,
+  "processos": [
+    {
+      "id": 550,
+      "orgao": "SEDAP",
+      "titulo": "9ª Processo Seletivo Simplificado (AC e PCD)",
+      "inscricoes": "26 a 26 de Junho de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 1.828,20",
+      "cargos": "3 cargos",
+      "vagas": 4,
+      "link": "/selecoes/eyJpdiI6ImpXUURRR1lGU3ZJUWxjMEhLRXhoZHc9PSIsInZhbHVlIjoic0pYN0pnK0pGa1pLWEU1QlVCQ1VTdz09IiwibWFjIjoiNzQxN2I3MjdkMjljOTcyOWUwZTBhMWU5MDQ3NDMxOTE0YjFhZGE5MTc2ZjdmZGI4ZjJhNWNmY2U2Yjc4NzI0MSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 551,
+      "orgao": "SEDAP",
+      "titulo": "9ª Processo Seletivo Simplificado (PPIQ)",
+      "inscricoes": "26 a 26 de Junho de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 1.828,12",
+      "cargos": "3 cargos",
+      "vagas": 3,
+      "link": "/selecoes/eyJpdiI6IlZXV0lMSktWQzUza3MxdnI4OVVSYUE9PSIsInZhbHVlIjoiVytDamd4WnIzbkJtRy9CVWdRaEJJdz09IiwibWFjIjoiMmIwZDJlOTkyZWYyZTU1Nzk4MWZlODMyODdkM2U4MGNhZGI1ODVlZDc1YTE0YjQ0MDM0MzcxOGYyOWZjZGVkNiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 539,
+      "orgao": "SEJU",
+      "titulo": "PSS 01/2026 - AC",
+      "inscricoes": "22 a 22 de Junho de 2026",
+      "vencimento_base": "R$ 2.559,37",
+      "cargos": "TÉCNICO EM GESTÃO PÚBLICA",
+      "vagas": 11,
+      "link": "/selecoes/eyJpdiI6IjhaYXVJZHptb2VNK3JqVDlEcitXWEE9PSIsInZhbHVlIjoiajgrMXBOaktmYlFlbDd5VCs1MCtoUT09IiwibWFjIjoiNTcwYTA1ZjI5MTVkNDViNTRhN2ZjODU1ZWQ3NTA0MDkxY2RhZTI0MGFlYzljY2Y5MmU3ZTE5ODVlMjhiZTNkZCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 540,
+      "orgao": "SEJU",
+      "titulo": "PSS 02/2026 - PPIQ",
+      "inscricoes": "22 a 22 de Junho de 2026",
+      "vencimento_base": "R$ 2.559,37",
+      "cargos": "TÉCNICO EM GESTÃO PÚBLICA",
+      "vagas": 4,
+      "link": "/selecoes/eyJpdiI6ImtWSTkxc3VuMlY1dzlXL0VlMFRrSFE9PSIsInZhbHVlIjoic3AzNm5wQ2ZXL3hSc2JCdWFPU05RUT09IiwibWFjIjoiMWI1ZTJhZDg3NTlhYWZhYTkxNWI4MzFlZTgxMWViNjYxY2U1MjU1MzFjZGMxYjE1YjU3Mzk2MjMxNjUyMTVmZCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 541,
+      "orgao": "SEMAS",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO Nº 4/2026 – PSS NÍVEL MÉDIO E SUPERIOR (AC, PcD)",
+      "inscricoes": "22 a 22 de Junho de 2026",
+      "vencimento_base": "De R$ 1.528,25 a R$ 2.318,08",
+      "cargos": "3 cargos",
+      "vagas": 12,
+      "link": "/selecoes/eyJpdiI6IjJQYzhLeXVsK2dxT09vN1R2OWpGamc9PSIsInZhbHVlIjoieGZlcEE4Mldrck9TNUE1K0pmbkMwUT09IiwibWFjIjoiMWNkZjQzMjRmMWE3NjNiYWYxNzdiOTkzODg4MDM2YTY5ZjBhZTRhYWYxMGIyMTViZTRlMjFlMWJhYTg0MjQ4OCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 542,
+      "orgao": "SEMAS",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO Nº 5/2026 – PSS NÍVEL MÉDIO E SUPERIOR (PPIQ)",
+      "inscricoes": "22 a 22 de Junho de 2026",
+      "vencimento_base": "De R$ 1.528,25 a R$ 2.318,08",
+      "cargos": "2 cargos",
+      "vagas": 4,
+      "link": "/selecoes/eyJpdiI6Im1JbWdIYzZyME9BOEY1VnlFdWd4c3c9PSIsInZhbHVlIjoiYWhrQXBKNWZRUWFNY1ZPY0tkZS9ZUT09IiwibWFjIjoiZTNmYzgzYzcwZWY0YWE0MDE5NTc1NzY0MWVlNGZjYzZkNjg3YWI0NTRmYzNhYjAwYTkxODZhNDM3ZDcyZjg4OSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 537,
+      "orgao": "FUNDAÇÃO CARLOS GOMES",
+      "titulo": "EDITAL Nº 001/2026 – PSS/FCG, 18 DE JUNHO DE 2026 1º PROCESSO SELETIVO SIMPLIFICADO PARA CONTRATAÇÃO TEMPORÁRIA 1º PSS/2026 – FCG – NÍVEL SUPERIOR, MÉDIO E FUNDAMENTAL / AC E PCD",
+      "inscricoes": "19 a 19 de Junho de 2026",
+      "vencimento_base": "De R$ 1.320,00 a R$ 2.098,75",
+      "cargos": "4 cargos",
+      "vagas": 7,
+      "link": "/selecoes/eyJpdiI6IjNuTmFrUVlMZWw5OThQNWYzWGFuL1E9PSIsInZhbHVlIjoiK1owRWNNc2Rrd2R0d1Q0WXFneWlXZz09IiwibWFjIjoiMGI1ZDUyY2MxYmM3YjVkNmM4MTZjOWFlYTBmMmQxYWY2MTA1MmYyOTk4ZTc3OGEyNTQxMTEzYmM2YjVkNjhjNSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 538,
+      "orgao": "FUNDAÇÃO CARLOS GOMES",
+      "titulo": "EDITAL Nº 002/2026 – PSS/FCG, 18 DE JUNHO DE 2026 2º PROCESSO SELETIVO SIMPLIFICADO PARA CONTRATAÇÃO TEMPORÁRIA 2º PSS/2026 – FCG – MÉDIO E FUNDAMENTAL / PPIQ",
+      "inscricoes": "19 a 19 de Junho de 2026",
+      "vencimento_base": "R$ 1.320,00",
+      "cargos": "3 cargos",
+      "vagas": 4,
+      "link": "/selecoes/eyJpdiI6Im5UeFFBVmpYTm54WEJONnFTSU5QcHc9PSIsInZhbHVlIjoicFFwRS9Ca3M2djVJQW5ENTZtcm9RUT09IiwibWFjIjoiZTkwOGIxODVlNWEwZWVlYzAxZGNkY2U3Y2ZhNDE4MTQ3ZGIwYTg3NmRjYWQyZDIzNzcwZjU3MGYxZGU2YzM5MCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 535,
+      "orgao": "SESPA",
+      "titulo": "51º PSS SESPA - AC e PcD",
+      "inscricoes": "18 a 19 de Junho de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.176,75",
+      "cargos": "8 cargos",
+      "vagas": 90,
+      "link": "/selecoes/eyJpdiI6Inp0dzVBZjREd1RSUml0R1cwOEpBa2c9PSIsInZhbHVlIjoiVXRpM2c2eFZ5bUkzeDc3SUZpc0xIQT09IiwibWFjIjoiZjM3MDM2MmU4MmEzYmEzZjVjYWIzYzczZTEzMDI0NWQxMDdjNTc0MmRmZDU5OGIyZGY5NjgwYTk2YWI4ZjAyZSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 536,
+      "orgao": "SESPA",
+      "titulo": "52º PSS SESPA - PPIQ",
+      "inscricoes": "18 a 19 de Junho de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.176,75",
+      "cargos": "8 cargos",
+      "vagas": 37,
+      "link": "/selecoes/eyJpdiI6Ik9uelJRR1Ftc2JtNmhzM01jc21TU0E9PSIsInZhbHVlIjoiMXhTNFJUaUV6NHc1RWNxNlUrcjRiUT09IiwibWFjIjoiZjAyOWQ3YWUzNWFmMDZjZjVlNGQyZjlhODcxM2YyOGNlYmUyNzM3NGIyMDA3ZWYwYmZmN2QzMmQ0NGU3ZTA4NCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 526,
+      "orgao": "POLÍCIA CIENTÍFICA DO PARÁ",
+      "titulo": "2º PROCESSO SELETIVO SIMPLIFICADO - NÍVEL FUNDAMENTAL, MÉDIO E SUPERIOR - 2026 - AUTODECLARADOS PRETOS, PARDOS, INDÍGENAS E QUILOMBOLAS - PPIQ*",
+      "inscricoes": "17 a 18 de Junho de 2026",
+      "vencimento_base": "De R$ 1.621,00 a R$ 2.492,73",
+      "cargos": "4 cargos",
+      "vagas": 21,
+      "link": "/selecoes/eyJpdiI6ImtYRVFFK1RtUmJqVU16SFdSNllmWFE9PSIsInZhbHVlIjoidVpaZ0tlRkFjY1paUWJ4QUxIdTBPQT09IiwibWFjIjoiNGUwNmZjZDA0NzYwNjkwNDY5NjJmMmFkN2NlN2U0NzcxYjdhZmI1M2VmYzZmNzgwYTEwODMxZWY5MmRlOWEwYiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 465,
+      "orgao": "POLÍCIA CIENTÍFICA DO PARÁ",
+      "titulo": "2º PROCESSO SELETIVO SIMPLIFICADO - NÍVEL  FUNDAMENTAL, MÉDIO E SUPERIOR - 2026",
+      "inscricoes": "17 a 18 de Junho de 2026",
+      "vencimento_base": "De R$ 1.621,00 a R$ 2.492,73",
+      "cargos": "5 cargos",
+      "vagas": 45,
+      "link": "/selecoes/eyJpdiI6IjJkOVdZTSt2aTVDdHF0YWZpWGdqTFE9PSIsInZhbHVlIjoiWUtFYk1SclFKN3FYZDBSRzZSamRUZz09IiwibWFjIjoiYzE2Mzg5NGVjMjA4Y2MxNDgxYjg3ZWY2YTczZTNmOTNmMzU2YWZhZThlYjdhMjhmYWRjMTE4OWNkNTRkNTk3ZiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 528,
+      "orgao": "ITERPA",
+      "titulo": "PSS 01/2026 _ ITERPA (01 AC e PCD)",
+      "inscricoes": "16 a 17 de Junho de 2026",
+      "vencimento_base": "De R$ 1.320,00 a R$ 1.954,91",
+      "cargos": "4 cargos",
+      "vagas": 17,
+      "link": "/selecoes/eyJpdiI6ImJTbVZmalgramZ4RTJYUmdBRmRMRkE9PSIsInZhbHVlIjoiNXAxV2pqdGRhVmIyNDNUU0RWOGorQT09IiwibWFjIjoiYzkyZDlmZGNmMTIyMDQyMWI0MzA4ZDFiMjQwZTVjZjU5YWYxNjQxOTc2MjQ3YjYwZTQzZmMyMzgwYTRmN2E0ZCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 529,
+      "orgao": "FUNDAÇÃO SANTA CASA DE MISERICÓRDIA DO PARÁ",
+      "titulo": "PSS 03/2026 (NÍVEL FUNDAMENTAL, MÉDIO E SUPERIOR) - AC e PcD",
+      "inscricoes": "16 a 17 de Junho de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.176,75",
+      "cargos": "11 cargos",
+      "vagas": 86,
+      "link": "/selecoes/eyJpdiI6IlRob0Y5UEtyOWRTWTIveUozUk52K1E9PSIsInZhbHVlIjoiKzk3UTlyaFUxTjhJRU16WTdxZ0JyZz09IiwibWFjIjoiYzk4MjU3NTJiZmQ5MzllNjAzY2U4NzhjNjE0YzQyYzM2MzNmNWQ5M2M2ZThiNzM2MWYxNGYzZGNkODI5YzRmNSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 530,
+      "orgao": "FUNDAÇÃO SANTA CASA DE MISERICÓRDIA DO PARÁ",
+      "titulo": "PSS 03/2026 (NÍVEL FUNDAMENTAL, MÉDIO E SUPERIOR) - PPIQ",
+      "inscricoes": "16 a 17 de Junho de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.176,75",
+      "cargos": "11 cargos",
+      "vagas": 38,
+      "link": "/selecoes/eyJpdiI6InVVRzBMdGROY0NtekRRUUxsdVRpZkE9PSIsInZhbHVlIjoiODBtOStFcm1pOVNuSmJ0NnJLMFQwUT09IiwibWFjIjoiNWYyMmU0MTg0ZDA3NmU2MzA4ZmJkYWExNjQ2YzlhODM4ZWU5NmE0ZDYwNWU5YzkwY2FhNmQ0MDMzNzU3NDkxYiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 531,
+      "orgao": "ITERPA",
+      "titulo": "PSS 01/2026_ITERPA (02 PPIQ)",
+      "inscricoes": "16 a 17 de Junho de 2026",
+      "vencimento_base": "De R$ 1.320,00 a R$ 1.954,91",
+      "cargos": "2 cargos",
+      "vagas": 8,
+      "link": "/selecoes/eyJpdiI6ImNVd3kzYXk5Mzh2bkFDN0ZHVkpPQkE9PSIsInZhbHVlIjoiYmt6NDZOU0VTZDgxOXdDczJ6R3A2dz09IiwibWFjIjoiNTU1OGQzOWVkNDc1ZGI2N2MyZjU2OTE5NTUwYzMwMmQ3YTYzMjEzYTdkZjUxMTc5NTZkZjc5OTY2Y2JiZDJhMiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 532,
+      "orgao": "SEFA",
+      "titulo": "PSS-SEFA-2026-AC e PcD",
+      "inscricoes": "16 a 17 de Junho de 2026",
+      "vencimento_base": "R$ 1.828,12",
+      "cargos": "3 cargos",
+      "vagas": 9,
+      "link": "/selecoes/eyJpdiI6Ikw1OFJRb3hPTVVrTnBBWHNtYW5HN2c9PSIsInZhbHVlIjoiRjRna091cDRoTVJIS1d4c2xYejRuUT09IiwibWFjIjoiZmE3YTg5NTE4OWVmNzY1YjFlOTcyMjA1MDViMGUzMGZiMjY2MjI1YzdhZWViNWVhMGQ2OTEyZmE3MzA0MjgyOSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 533,
+      "orgao": "SEFA",
+      "titulo": "PSS-SEFA-2026-PPIQ",
+      "inscricoes": "16 a 17 de Junho de 2026",
+      "vencimento_base": "R$ 1.828,12",
+      "cargos": "2 cargos",
+      "vagas": 5,
+      "link": "/selecoes/eyJpdiI6InlYY09XS0ZvOUhmOUtQdnI0ZUpCREE9PSIsInZhbHVlIjoid2FxV21iUEpMcEkxNW01OGlpWUlYQT09IiwibWFjIjoiYTAzNGI2NDA1MjBhYzc1YWY2YjJhYTczYTI0YmQ2ZmJkNGJiYmY4NTQwYmUwODRhZTM5OGEyNTk1YWJkZTllMCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 527,
+      "orgao": "SEMAS",
+      "titulo": "PROCESSO SELETIVO  SEMAS - NÍVEL SUPERIOR E FUNDAMENTAL 3/2026",
+      "inscricoes": "15 a 15 de Junho de 2026",
+      "vencimento_base": "De R$ 1.417,27 a R$ 2.318,08",
+      "cargos": "2 cargos",
+      "vagas": 6,
+      "link": "/selecoes/eyJpdiI6Ilh5am50ZjJSR04vWldjRHFzK0tsRXc9PSIsInZhbHVlIjoiWm5hOUJra2dMODk2RVUwWUcvaEJFZz09IiwibWFjIjoiYmU5NzBlMzBhOTBkMmVhMTYyOThiOGMzNWJiMDc5MzYxZDY4YTM5ZGMyODE2NTM1MTIwNjJmYTI3NDI3ZTg3NiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 524,
+      "orgao": "SEIRDH",
+      "titulo": "SEIRDH PSS 01/2026",
+      "inscricoes": "11 a 11 de Junho de 2026",
+      "vencimento_base": "De R$ 1.320,00 a R$ 1.724,64",
+      "cargos": "3 cargos",
+      "vagas": 12,
+      "link": "/selecoes/eyJpdiI6Im54Q3pmY1grY1Q1Y0JYck5sTTNHbVE9PSIsInZhbHVlIjoiNlN2dXU3eHNLTkJCTmxFajkraU9zUT09IiwibWFjIjoiYjYxNTRiODhiZDMxYjkxYjMzY2JjMjg2Y2VhYjgwZTQyZWMyOGMwYzgwNjUxYjNkNmJiNDM0MzY1OTBiOTYxMiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 525,
+      "orgao": "SEIRDH",
+      "titulo": "SEIRDH PSS 02/2026 PPIQ",
+      "inscricoes": "11 a 11 de Junho de 2026",
+      "vencimento_base": "De R$ 1.320,00 a R$ 1.724,64",
+      "cargos": "4 cargos",
+      "vagas": 6,
+      "link": "/selecoes/eyJpdiI6IkE4aTh3SG5BblExa1JTTjgzMkFlWHc9PSIsInZhbHVlIjoidm5DV1RCZjdERXQ3Vm5Ma2Z3ZUdFdz09IiwibWFjIjoiM2I5YmVlY2FlYzRkYzgwNWNmOWM1NDgzNzA3MzFiZDZhMmQwM2NmOTc3NmNiNWZkNWJmMzFhYjJhYmRhYmE3MyIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 522,
+      "orgao": "SEAC",
+      "titulo": "SEAC - EDITAL 01/2026 - PSS 01/2026",
+      "inscricoes": "09 a 10 de Junho de 2026",
+      "vencimento_base": "R$ 1.399,20",
+      "cargos": "2 cargos",
+      "vagas": 58,
+      "link": "/selecoes/eyJpdiI6InhmOG42bEVBL1ltNWkvbjFhR2VuNFE9PSIsInZhbHVlIjoic2hEenJ4elFqR3o1NDRNMkl5d3NoZz09IiwibWFjIjoiMDY4OWQwYWY3ZDNmZmM4MTVkNzU3NWQ1YmFjMjQ2ZDM2YThkOWFjMDI5OGJjMzBkZjlmNGIyNTE1ODUxNWU3ZCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 523,
+      "orgao": "SEAC",
+      "titulo": "SEAC - EDITAL 02/2026 - PSS 01/2026",
+      "inscricoes": "09 a 10 de Junho de 2026",
+      "vencimento_base": "R$ 1.399,20",
+      "cargos": "2 cargos",
+      "vagas": 27,
+      "link": "/selecoes/eyJpdiI6IkFpV1lGSkZCWE5ka28zOW9xQXZyQnc9PSIsInZhbHVlIjoiVDEza25MZG5xYzgrallHcUtLNlBhQT09IiwibWFjIjoiOGJkNDIxMmU1MjJiYWVlNjA3OTExYzgxODI5ZDBjODM3YWJkYWVhN2ZmMGFlOTE2ZDYzODY1MjM4ZjVhMTM1MCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 472,
+      "orgao": "SEASTER",
+      "titulo": "PSS 001/2026 - SEASTER (AC e PCD)",
+      "inscricoes": "09 a 09 de Junho de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.176,75",
+      "cargos": "10 cargos",
+      "vagas": 49,
+      "link": "/selecoes/eyJpdiI6ImwycjhLelhZQXJEWHlhMUJTbG1RWEE9PSIsInZhbHVlIjoiWVVSWUsrWEQ4VTlaLzI4VVFUeWdhZz09IiwibWFjIjoiMGJjNmM4MTVlNjc0YmFhZjkzMTA4YWQxZmFhNTYyNDVkZjI4OWZjYThlMWM1ZGY4MWNmNjU3MDJkYmIwNmUzMCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 502,
+      "orgao": "SEASTER",
+      "titulo": "PSS 002/2026 - SEASTER (PPIQ)",
+      "inscricoes": "09 a 09 de Junho de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 1.828,12",
+      "cargos": "8 cargos",
+      "vagas": 22,
+      "link": "/selecoes/eyJpdiI6IkZlOHpyd3ltdUh6dTlvRkxCTDlWQVE9PSIsInZhbHVlIjoiUm9JbVFxUStXb2JTeUxZSUlhMU1yZz09IiwibWFjIjoiMzYyNThmOTMxNGVmNzk3MDYyMzUxZGQ3NDczYmU1MmQzNDJkYzdhMzRhZGQ4OGQwMTA2NGY1YWIxZTQwY2U2YSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 503,
+      "orgao": "SEASTER",
+      "titulo": "PSS 003/2026 - SEASTER (AC e PCD)",
+      "inscricoes": "09 a 09 de Junho de 2026",
+      "vencimento_base": "R$ 1.399,20",
+      "cargos": "ASSISTENTE ADMINISTRATIVO",
+      "vagas": 17,
+      "link": "/selecoes/eyJpdiI6ImpHY1V6TkRia2JuQXZrYm9zSG11Znc9PSIsInZhbHVlIjoid1EzNWJJbURkV0dMSkRXWDRzSU5UUT09IiwibWFjIjoiMGZmZWI1ZTIwZTYwY2M1YTIzMDdhZDMzN2U4OTA5MzY3NDFiNzE0MTVlMWZjNDI0MTM2MjE2N2ZlZWI0NjQ4MyIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 504,
+      "orgao": "SEASTER",
+      "titulo": "PSS 004/2026 - SEASTER (PPIQ)",
+      "inscricoes": "09 a 09 de Junho de 2026",
+      "vencimento_base": "R$ 1.399,20",
+      "cargos": "ASSISTENTE ADMINISTRATIVO",
+      "vagas": 8,
+      "link": "/selecoes/eyJpdiI6InJ5NUpIOWxvU3lnamFnb1pVRkdMSmc9PSIsInZhbHVlIjoiVy96ZTIwY1hCOXEzYkNaZzdjZ2RUZz09IiwibWFjIjoiNDgwZThmODZjYWQ3MDE5N2VkMjRhNTUyZDZmZTM1ZmE4MjA1YWZjYmQyNzYxNTM1NDE0ZDZlMTZkODRlMGE0YSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 518,
+      "orgao": "SEPLAD",
+      "titulo": "PSS/SEPLAD Nº 01/2026 - NÍVEL SUPERIOR (PPIQ)",
+      "inscricoes": "09 a 10 de Junho de 2026",
+      "vencimento_base": "R$ 2.176,75",
+      "cargos": "ANALISTA DE SAÚDE OCUPACIONAL - PERÍCIA MÉDICA",
+      "vagas": 5,
+      "link": "/selecoes/eyJpdiI6IlJQN29Gd0lmd3dUdjhjMnBYdWl3MFE9PSIsInZhbHVlIjoiZWExT2JTQWZSL25RMGYzUFF5WXhQdz09IiwibWFjIjoiMDEyNjBmZmYyOThjMWExMjRhMzBjZjM5MjAyODc1ZjljYWY5N2JhZjEyNmZmNmQ0NTE0MWY2YjczOGI0NWU2MiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 519,
+      "orgao": "EMATER",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO  Nº 002/2026 - EMATER/PA - NÍVEL  MÉDIO E SUPERIOR.",
+      "inscricoes": "08 a 09 de Junho de 2026",
+      "vencimento_base": "De R$ 2.229,97 a R$ 4.733,21",
+      "cargos": "4 cargos",
+      "vagas": 10,
+      "link": "/selecoes/eyJpdiI6IkpvY0w0WjEzNkNqeUhIMjdSOFp4M1E9PSIsInZhbHVlIjoiZ2ROVmE5VHVFdXIxUzk5MDZ6L3Fudz09IiwibWFjIjoiZGI5NmVlNTE5NjNkYTZhY2E5OGM3NGM5NzQwNjNkNmYwNzQ0OTBhZDMwOWY1MmFmYmI5NWY1NWI2MWU2OTg0YSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 520,
+      "orgao": "EMATER",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO  Nº 003/2026 - EMATER/PA - NÍVEL SUPERIOR - PPIQ",
+      "inscricoes": "08 a 09 de Junho de 2026",
+      "vencimento_base": "R$ 4.733,21",
+      "cargos": "EXTENSIONISTA RURAL I",
+      "vagas": 4,
+      "link": "/selecoes/eyJpdiI6IktyTWRqV0ZuK0syTERJWlB2a3drNnc9PSIsInZhbHVlIjoiS092WEQ1MGVBQ2l2dVVOWmlxaGxtUT09IiwibWFjIjoiM2YzZmMyNWFhZGRjYzhjNDNjMzliZDJhNGFmNGEzYjAwOGEwZmI1MWQ2YzU0MTUyYjZlMTQ5MWNhZmQwNzUzNSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 499,
+      "orgao": "SEPLAD",
+      "titulo": "PSS/SEPLAD Nº 01/2026 - NÍVEL MÉDIO E SUPERIOR",
+      "inscricoes": "09 a 10 de Junho de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.176,75",
+      "cargos": "2 cargos",
+      "vagas": 19,
+      "link": "/selecoes/eyJpdiI6Ik5UalRIQWR3azRKUzh2cnVyeG9KcWc9PSIsInZhbHVlIjoiM2NiZzcxcm9DVXVaTFQzY2dXbEkxZz09IiwibWFjIjoiYjc2Njg0ZTk2OWVkNWRlZDBlYzc0YWM0Y2UxZWFkOWY4NDg3NjdhZDkxNTk1YWRiNDJiNzFjODg2YjY2NWZiZSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 513,
+      "orgao": "PARAPAZ",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO Nº 006/2026 - FUNDAÇÃO PARÁPAZ (PPIQ)",
+      "inscricoes": "01 a 02 de Junho de 2026",
+      "vencimento_base": "R$ 1.399,20",
+      "cargos": "ASSISTENTE ADMINISTRATIVO",
+      "vagas": 10,
+      "link": "/selecoes/eyJpdiI6Im9abjIzZnMxTURhblAxNldSbmsyYlE9PSIsInZhbHVlIjoiTnNSVlg2T1dLb09UR0k0ZkxoVnMxZz09IiwibWFjIjoiNmVkODVmM2ZlZWQyYjRjOGVkMTc2OTU4ZGYxNjBjZWVlMmRjZjY5Y2JmNThjZDcxMDIyMDNhZmY1OTdhMzNiYSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 501,
+      "orgao": "POLICIA CIVIL",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO - 002/2026 - PCPA (PPIQ)",
+      "inscricoes": "01 a 02 de Junho de 2026",
+      "vencimento_base": "De R$ 1.609,08 a R$ 2.102,34",
+      "cargos": "5 cargos",
+      "vagas": 10,
+      "link": "/selecoes/eyJpdiI6Ii9vK09Lc3ptendwSGZlS3l3dk9MbVE9PSIsInZhbHVlIjoiK1RyNk04YUxORmc5NzZjUWdxUm55QT09IiwibWFjIjoiMDU4ZmYwMTQzNmY1MGJiODQ3MDJkODdlMDMxNTIxMmVlY2UyODAyMDgxMDk1MWQ1NWE0YWE5OGFhNjZkYmZiNCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 508,
+      "orgao": "POLICIA CIVIL",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO - 003/2026 - PCPA (AC/PCD)",
+      "inscricoes": "01 a 02 de Junho de 2026",
+      "vencimento_base": "De R$ 1.609,08 a R$ 2.102,34",
+      "cargos": "6 cargos",
+      "vagas": 21,
+      "link": "/selecoes/eyJpdiI6InFRdUkyTHYwcFF5aVBYcm9wd1ZxQ0E9PSIsInZhbHVlIjoiTmV0STlkWlZQWGdHK2w5Qk1oVWZXdz09IiwibWFjIjoiOTc5YmE2YTk2ODBjNmVkNTQ0YWM2ODhmZTkzYmFkMjcxNGY0YWNkMDUzZDg3NjM1NTc4YTIyZDdkY2NhYjZiYSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 511,
+      "orgao": "PARAPAZ",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO Nº 005/2026 FUNDAÇÃO PARÁPAZ (AC + PCD)",
+      "inscricoes": "01 a 02 de Junho de 2026",
+      "vencimento_base": "R$ 1.399,20",
+      "cargos": "ASSISTENTE ADMINISTRATIVO",
+      "vagas": 22,
+      "link": "/selecoes/eyJpdiI6IjhXYm1ic3dZT1QwK3c5VjdhUnBuYVE9PSIsInZhbHVlIjoicDlBSS8yNzNXTTBUV2JqemhDTGRyQT09IiwibWFjIjoiZGFlYmI1NTg1MGE3NzA4ODMwZTk0OWRjMjMyZWVjYmYxNDg0NjRiOTliNGM3ZjhjMWZiNDQ1MmI5MTVmMjY2NiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 515,
+      "orgao": "PROCURADORIA GERAL DO ESTADO - PGE",
+      "titulo": "PSS PGE 01/2026 (AC/PCD)",
+      "inscricoes": "28 a 29 de Maio de 2026",
+      "vencimento_base": "R$ 2.318,08",
+      "cargos": "ANALISTA DE PROCURADORIA",
+      "vagas": 10,
+      "link": "/selecoes/eyJpdiI6Ik1RRHp1SU1hVEJ0OVFtL3RObktScHc9PSIsInZhbHVlIjoieGZhcHpzSllLZGF6eGVvZ1kzMWV5QT09IiwibWFjIjoiNmU1NzlhZWUxYTA5ZDNmN2MwM2NiZGY3YTgyOTViNDEzNWM1NGVlMjUwOTc4ZjcxZmE1NTlhNjY2YTFhM2JkYyIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 516,
+      "orgao": "PROCURADORIA GERAL DO ESTADO - PGE",
+      "titulo": "PSS PGE 01/2026 (PPIQ)",
+      "inscricoes": "28 a 29 de Maio de 2026",
+      "vencimento_base": "R$ 2.318,08",
+      "cargos": "ANALISTA DE PROCURADORIA",
+      "vagas": 5,
+      "link": "/selecoes/eyJpdiI6Imx1ZG1NZXJodjErVGs2YzZ1dDZjWGc9PSIsInZhbHVlIjoicTBhNzJoY2duRm5mdHZuRC9Oc1hjUT09IiwibWFjIjoiYmEzZTk0NDE4MTdhYTM5OWI5NDE3OGE0ZDJkOTc0MDJkNGRhNDMxMGJkNGUxODBiMGNlYTU1ZTU3ZDVjMDRiNyIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 509,
+      "orgao": "FUNDAÇÃO CULTURAL DO PARÁ",
+      "titulo": "PSS - BIBLIOTECAS USINAS DA PAZ - AC/PCD - 2026",
+      "inscricoes": "29/05 a 01/06 de 2026",
+      "vencimento_base": "De R$ 1.530,40 a R$ 2.645,75",
+      "cargos": "5 cargos",
+      "vagas": 48,
+      "link": "/selecoes/eyJpdiI6IjJhdFpkSlZwT2lpZlZRY3hWWU44Z3c9PSIsInZhbHVlIjoiK053ZVJZT0E0aDRkYTI0elZPQVpjdz09IiwibWFjIjoiZWI5NmY4NGQ2ODhhYjJjYzMwY2Q3Yjg1Y2RiZDg5YzZkZjhhMDNjMTExYjQ5YmFlNTQ4NjYxZTkxNThhNTM4ZSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 510,
+      "orgao": "FUNDAÇÃO CULTURAL DO PARÁ",
+      "titulo": "PSS - BIBLIOTECAS USINAS DA PAZ - PPIQ - 2026",
+      "inscricoes": "29/05 a 01/06 de 2026",
+      "vencimento_base": "De R$ 1.530,40 a R$ 2.645,75",
+      "cargos": "5 cargos",
+      "vagas": 22,
+      "link": "/selecoes/eyJpdiI6Imc4ZVRFdXdGUy9KMUE2TndacG1MM0E9PSIsInZhbHVlIjoia2hGMzJ0ZGRLR0picTdWNTYzSXZZQT09IiwibWFjIjoiYTU1M2ViMGRmODgwNWVlNzQ0MmQzZTYwOTQxZTA0NWNlMjZmNGUzZWFjNGJjMmFkODc0OGFiY2Q4MjQ2MmQ0ZSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 495,
+      "orgao": "Escola de Governança Pública do Estado do Pará",
+      "titulo": "PSS EGPA 01/2026",
+      "inscricoes": "26 a 27 de Maio de 2026",
+      "vencimento_base": "De R$ 1.621,00 a R$ 3.978,03",
+      "cargos": "5 cargos",
+      "vagas": 14,
+      "link": "/selecoes/eyJpdiI6IjdMVmZCM2pWQnFsdHhWOVFDVVFOcFE9PSIsInZhbHVlIjoielNoenVEN2IzNFo0KzVCLzhwemRvdz09IiwibWFjIjoiZDRhZmRiNDQ5NzY2NDFhMzk4MTM5NWU4Yzg2ZDA1ZWExYTA5NDg2ZTM3ZjI1MjczNWZjMDQyMjc1YTU5YWM1MiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 496,
+      "orgao": "Escola de Governança Pública do Estado do Pará",
+      "titulo": "PSS EGPA 02/2026 (PPIQ)",
+      "inscricoes": "26 a 27 de Maio de 2026",
+      "vencimento_base": "De R$ 1.621,00 a R$ 3.978,03",
+      "cargos": "3 cargos",
+      "vagas": 5,
+      "link": "/selecoes/eyJpdiI6IjZOTnluNXNhN3VWWDQwV05hdkR0clE9PSIsInZhbHVlIjoiVW94QnJjUHVBQVM2cS9RelFMbVVvUT09IiwibWFjIjoiNjU0NWYzZDI1YzBiMTMyYzkyODRhMDFmMDlkNzRiZDJkYjk2YjE3ZTY3MzhiN2ZhYjE0NGNjY2U3NjVmNzU1OSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 505,
+      "orgao": "SEDEME",
+      "titulo": "PSS - SEDEME - Nº 06/2026",
+      "inscricoes": "27 a 28 de Maio de 2026",
+      "vencimento_base": "R$ 1.828,12",
+      "cargos": "2 cargos",
+      "vagas": 3,
+      "link": "/selecoes/eyJpdiI6IjFLa2l2NXZEUUhaaWE4Rk1ZMEJxdkE9PSIsInZhbHVlIjoiKzE0MHdCOTcwUjVuSkJ0RkM3L2M0dz09IiwibWFjIjoiMjI0NmY3ZTI4YzhmMmEwMTJlNDMyYjJjN2M1NmVkMjFiYmMxODdiZDQ3NzEzZmI3NjgxOGZmN2U3MjlhNzMzNyIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 497,
+      "orgao": "SEAF",
+      "titulo": "PSS SEAF",
+      "inscricoes": "21 a 25 de Maio de 2026",
+      "vencimento_base": "De R$ 1.215,50 a R$ 1.724,64",
+      "cargos": "3 cargos",
+      "vagas": 15,
+      "link": "/selecoes/eyJpdiI6IjdwY05qdmJXYXh2Tjh0NHgvNnZEZ3c9PSIsInZhbHVlIjoiTGtFK1RqRHpuNmMvUVpORDI5R0psZz09IiwibWFjIjoiOGZmODhkMGIzZTlmMzlmZjg5OTJiOTQ5ZGJlZTRiN2IwYWNlODVjMjRlNTM4NTk3ZTIyNzkwYTU5NWIxNjE1NSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 498,
+      "orgao": "SEAF",
+      "titulo": "PSS SEAF/PPIQ",
+      "inscricoes": "21 a 25 de Maio de 2026",
+      "vencimento_base": "De R$ 1.215,50 a R$ 1.724,64",
+      "cargos": "3 cargos",
+      "vagas": 5,
+      "link": "/selecoes/eyJpdiI6InNlQys4d2Z5c0NRbExHdW5NdmxZdUE9PSIsInZhbHVlIjoiYTlwR1N1T2xtVUkrQ29Yb01PaFRZUT09IiwibWFjIjoiYzUwODBlMjkzOWFjMDI2ODk2OTA4NThiNTExOTU0MDdhNTFkYzkyYzVjMGVjYjA5ZjFlOTk4NzA4NmQ4MzJmMyIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 493,
+      "orgao": "SEMAS",
+      "titulo": "PROCESSO SELETIVO SEMAS - NÍVEL SUPERIOR  1/2026 (AC e PcD)",
+      "inscricoes": "20 a 21 de Maio de 2026",
+      "vencimento_base": "R$ 2.318,08",
+      "cargos": "2 cargos",
+      "vagas": 9,
+      "link": "/selecoes/eyJpdiI6IlFxV1VaMHp1dmkrTnFvK2VoaTFjL1E9PSIsInZhbHVlIjoiYmovYUYwVHFvOW8rUWxxazMrS0pmUT09IiwibWFjIjoiMGQwNDU1ODg1OTJmNGI5YzE1YjMwYjU1OTA4MGZiYjAwNjRjMzAxOTA3N2ZmYTg5NTE1NGIzOTMzZjVhMDk3OCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 494,
+      "orgao": "SEMAS",
+      "titulo": "PROCESSO SELETIVO SEMAS - NÍVEL SUPERIOR 2/2026 (PPIQ)",
+      "inscricoes": "20 a 21 de Maio de 2026",
+      "vencimento_base": "R$ 2.318,08",
+      "cargos": "ANALISTA AMBIENTAL",
+      "vagas": 2,
+      "link": "/selecoes/eyJpdiI6ImF3VUo3ZXVCNkFuMCtRQnVVbkNOUVE9PSIsInZhbHVlIjoidmx3RmVJTWQ3TklKZWJ1cjI5UXNpZz09IiwibWFjIjoiNDAxZTQzNjc0OWIwMDQ3NjNjNTg0NThlMTZiMTk0NGVlNTYyMTI3MWQyODQ0YThiMWQ1NTU1OWU4ZmI4YWRjMCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 467,
+      "orgao": "SESPA",
+      "titulo": "49º PSS SESPA - AC e PcD",
+      "inscricoes": "18 a 19 de Maio de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.176,75",
+      "cargos": "15 cargos",
+      "vagas": 114,
+      "link": "/selecoes/eyJpdiI6IjluN1ZiQzk1akJrUUlsTDU1VzBRYkE9PSIsInZhbHVlIjoiK2h2ZHRyQnhTTVpqZExOOTdvZi9Qdz09IiwibWFjIjoiMjgwMDU5ZTZjNDE0NTgwYmQzMGUzZDgwNzM5NmZiYzJjZDUxZTEzYjQ5MTRkYjllN2NiNzg1NmQ1YmNiZDk1NSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 492,
+      "orgao": "SESPA",
+      "titulo": "50º PSS SESPA - PPIQ",
+      "inscricoes": "18 a 19 de Maio de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.176,75",
+      "cargos": "8 cargos",
+      "vagas": 46,
+      "link": "/selecoes/eyJpdiI6ImEwY2FqTlExUytNak9CRHdIU3RORXc9PSIsInZhbHVlIjoibzZEeEx1V2JmVXZJUnFLcVNuQVc5dz09IiwibWFjIjoiMDM1MjNhODcxMDU0ZWRiZDJiZDE3MTk1ZTgwM2EwM2NiYzhiYzU1Mzc3NzU0YmUxMGUxMzRmYjZiZDJhN2ExYiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 482,
+      "orgao": "PARAPAZ",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO Nº 003/2026 FUNDAÇÃO PARÁPAZ (AC + PCD)",
+      "inscricoes": "14 a 15 de Maio de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.372,06",
+      "cargos": "8 cargos",
+      "vagas": 75,
+      "link": "/selecoes/eyJpdiI6IkRJbk5rWE5XM2pPeUxWQVlTc0dZNUE9PSIsInZhbHVlIjoiMVF6azdpNjJpTGZUTU41VVdIek9PUT09IiwibWFjIjoiMjNiOTdjNGQ5OTQzOWY4Y2JhNTdmYzZmZTUwOTQ2Y2VlODhkZmYzNzVjOWJmZThhYzYyMTEwZjEyYWVkYTA4MyIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 489,
+      "orgao": "PARAPAZ",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO Nº 004/2026 FUNDAÇÃO PARÁPAZ (PPIQ)",
+      "inscricoes": "14 a 15 de Maio de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.372,06",
+      "cargos": "7 cargos",
+      "vagas": 36,
+      "link": "/selecoes/eyJpdiI6ImhBQ0hwdU91bSszYXU0azBCeTJ6Z1E9PSIsInZhbHVlIjoiNGs2V0tuY3l1K1pUc0J0citJMDc0QT09IiwibWFjIjoiOTAwMmNlNWIyYWJjNTMwNDY0MmNlN2Q2ZTgyZTMzOTA4N2Q3YWMwZTQ1NGYwNjIzZGQwYzA5ZTY5YjUwODliZiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 485,
+      "orgao": "HOSPITAL OPHIR LOYOLA",
+      "titulo": "38º PSS - HOL/2026 – AC/PCD",
+      "inscricoes": "12 a 13 de Maio de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.176,75",
+      "cargos": "22 cargos",
+      "vagas": 241,
+      "link": "/selecoes/eyJpdiI6ImpaVU5iSHhNY2hHUXNpdEtnMHhXYXc9PSIsInZhbHVlIjoiMGIzVWJNc1k1Tjg3S2RKbFh4QnNsUT09IiwibWFjIjoiMzdhNmY1ODgxZDI2NjE5MGU1YmFhNjM5YTE4MDJmNTg3NDlmMDM1YjJjYjA3ZGExNzRkNmQwOGVhYWI5N2FlNSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 486,
+      "orgao": "HOSPITAL OPHIR LOYOLA",
+      "titulo": "39º PSS - HOL/2026 – PPIQ",
+      "inscricoes": "12 a 13 de Maio de 2026",
+      "vencimento_base": "De R$ 1.399,20 a R$ 2.176,75",
+      "cargos": "17 cargos",
+      "vagas": 121,
+      "link": "/selecoes/eyJpdiI6Imk0RnowZG1maGV3Vmx5MStZVWM3OHc9PSIsInZhbHVlIjoiRVNyY0xWa3h0VXhUMERpTGhKVHJmZz09IiwibWFjIjoiOGUxNTA5YzM4YjlhNzQxYmQ2YTFiY2YxN2U1OGYzODY2Yjk1OTlmYmE1MjhkMWI3YzdkYzNjMzcxZWFhMTI5MiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 479,
+      "orgao": "SEMU",
+      "titulo": "PSS SEMU 01/2026",
+      "inscricoes": "29 a 30 de Abril de 2026",
+      "vencimento_base": "De R$ 1.518,00 a R$ 1.724,64",
+      "cargos": "3 cargos",
+      "vagas": 5,
+      "link": "/selecoes/eyJpdiI6Ik1ZLzFxOVBqalZBTnFUNGRVQml5aGc9PSIsInZhbHVlIjoiMi85UjBmZzVxT2J5SldnL3gyTGpNQT09IiwibWFjIjoiNzM2NDNjNmUxZGJiMDZlZDNkYmZkYzFjMmU2NDZkNzg3M2NkNTVjYjFmYjE1ZjdmZTNmMjQzMjNkOWVjMzA1ZSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 471,
+      "orgao": "FUNDAÇÃO SANTA CASA DE MISERICÓRDIA DO PARÁ",
+      "titulo": "PSS 02/2026 (NÍVEL FUNDAMENTAL, MÉDIO E SUPERIOR)",
+      "inscricoes": "19 a 23 de Março de 2026",
+      "vencimento_base": "De R$ 1.320,00 a R$ 2.053,54",
+      "cargos": "12 cargos",
+      "vagas": 250,
+      "link": "/selecoes/eyJpdiI6IlJpK0NxYllFMHE1SzZqVnBaa1dkYnc9PSIsInZhbHVlIjoibG81em9jUnpvcTl5NWJ0TG9SUjllQT09IiwibWFjIjoiNGM1MmU5MGMzNzRkMTJjMGU1MDA4YzJkY2QyZTY3NDE1MWRiMmYxZDYzNmM5ZTk3YTlmYWE2MTAzYjNjOWRjYyIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 466,
+      "orgao": "FUNDAÇÃO SANTA CASA DE MISERICÓRDIA DO PARÁ",
+      "titulo": "PSS 01/2026 (NÍVEL FUNDAMENTAL, MÉDIO E SUPERIOR)",
+      "inscricoes": "17 a 18 de Março de 2026",
+      "vencimento_base": "De R$ 1.320,00 a R$ 2.053,54",
+      "cargos": "21 cargos",
+      "vagas": 116,
+      "link": "/selecoes/eyJpdiI6ImNheFdQYS9XdXFER05rbkhzL1JlVnc9PSIsInZhbHVlIjoidkxkb3MzVER5cmpZNHBIbjg4aTVMQT09IiwibWFjIjoiZWRjMWU4OGMzNmFlMzE3ZDgzNDMyNTlhZjVmMzU1ZWI2ZjQ1ZjFhZGM1MmM3YzJiYmRkZGZkZjIwYzhkM2ViOCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 468,
+      "orgao": "SEDAP",
+      "titulo": "PSS 01/2026 NÍVEL SUPERIOR",
+      "inscricoes": "13 a 16 de Março de 2026",
+      "vencimento_base": "R$ 1.724,64",
+      "cargos": "TÉCNICO EM GESTÃO PÚBLICA",
+      "vagas": 2,
+      "link": "/selecoes/eyJpdiI6ImRybXdydWtxYUszdzJZRDJUUmw0ZFE9PSIsInZhbHVlIjoiLzYzWVVKVlNmRys3UGh6Tkw3RmRCZz09IiwibWFjIjoiODgyMTdjODY4OWUzM2M3ZDZiZTMxZTVjMjA5ODdlYzI4YjgxNDA1NWIwYTMxOGRkM2QzYTgwNGFmNTA5ODYwZCIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 464,
+      "orgao": "PARAPAZ",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO Nº 002/2026   FUNDAÇÃO PARÁPAZ",
+      "inscricoes": "05 a 09 de Março de 2026",
+      "vencimento_base": "De R$ 1.320,00 a R$ 2.053,54",
+      "cargos": "6 cargos",
+      "vagas": 41,
+      "link": "/selecoes/eyJpdiI6Ik9NS3lQY0E3YXBPbXBxT2RMSlBOOXc9PSIsInZhbHVlIjoiV0c5Ukw0allZZ3BPcEFtM0dmbFhlZz09IiwibWFjIjoiNTU3ZGVkYmJkYjBjNjE3NDJkN2U2MGFhMjQ3YTY2MTM1YTg0ODc1MjkzZDhmYjFmMTAwODY2Y2I2MGJhZjAzYiIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 460,
+      "orgao": "SESPA",
+      "titulo": "48º PSS/SESPA - INTERIOR",
+      "inscricoes": "09 a 10 de Fevereiro de 2026",
+      "vencimento_base": "De R$ 1.724,64 a R$ 2.053,54",
+      "cargos": "2 cargos",
+      "vagas": 9,
+      "link": "/selecoes/eyJpdiI6ImlTYzIyeUNLbm1KTVpjR1o5cEFKT1E9PSIsInZhbHVlIjoiTTEwdHdBUDk1VWMvNCtyb1FZa0NRZz09IiwibWFjIjoiNTcxZWUyN2E1ODQzZTZhM2UxNjljODJiNmJmNWMzMDAxNzI3YzZiZDFjMmMxZTY1ZTg3MzliM2IwYjk2MmViMSIsInRhZyI6IiJ9/detalhe"
+    },
+    {
+      "id": 437,
+      "orgao": "IGEPPS",
+      "titulo": "PROCESSO SELETIVO SIMPLIFICADO IGEPPS/PA - NÍVEL SUPERIOR 2025",
+      "inscricoes": "24 a 25 de Novembro de 2025",
+      "vencimento_base": "R$ 6.567,47",
+      "cargos": "5 cargos",
+      "vagas": 76,
+      "link": "/selecoes/eyJpdiI6ImphQSt5WTA1SXNMMGc1YkxtY0dmSWc9PSIsInZhbHVlIjoiblpoMFN3VW42N0FTaGlqZDRUSVdmdz09IiwibWFjIjoiMDA5MWUzNTc3NjY2ZTI5M2IwNWQxNDhkYWI0YjVjNTAxNzFjNmY4NjRmODg2ODdkM2I5MDdjNGJkOTQxNGQzYyIsInRhZyI6IiJ9/detalhe"
+    }
+  ]
 }
