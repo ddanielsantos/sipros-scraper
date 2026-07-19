@@ -1,0 +1,22 @@
+{
+  "name": "sipros-scraper",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "bun run index.ts",
+    "scrape": "bun run scripts/scrape.ts",
+    "scheduler": "bun run scripts/scheduler.ts",
+    "demo": "bun run index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "playwright": "^1.61.1"
+  },
+  "trustedDependencies": ["playwright"]
+}
