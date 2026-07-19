@@ -13,10 +13,10 @@ scheduler: ## Executa scheduler contínuo (Ctrl+C para parar)
 	bun run scripts/scheduler.ts
 
 logs: ## Mostra últimos logs
-	@if [ -f /var/log/sipros-scraper.log ]; then \
-		tail -f /var/log/sipros-scraper.log; \
+	@if [ -f logs/scraper.log ]; then \
+		tail -f logs/scraper.log; \
 	else \
-		echo "Log não encontrado em /var/log/sipros-scraper.log"; \
+		echo "Log não encontrado. Execute 'make scrape' primeiro."; \
 	fi
 
 cron: ## Mostra crontab atual
