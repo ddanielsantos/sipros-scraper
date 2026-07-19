@@ -9,24 +9,27 @@ const URL = "https://www.sipros.pa.gov.br/selecoes/disponiveis";
  * Isso evita timeouts longos e separa problema de rede vs. problema de scraping.
  */
 async function checkReachability(url: string): Promise<void> {
+  // Alguns servidores/Cloudflare rejeitam HEAD, usamos GET e cancelamos o body
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 15_000);
 
-  try {
-    const response = await fetch(url, {
-      method: "HEAD",
-      signal: controller.signal,
-      redirect: "follow",
-    });
+  const response = await fetch(url, {
+    method: "GET",
+    signal: controller.signal,
+    redirect: "follow",
+  });
 
-    if (!response.ok) {
-      throw new Error(
-        `Site retornou HTTP ${response.status} ${response.statusText}`,
-      );
-    }
-  } finally {
-    clearTimeout(timer);
+  clearTimeout(timer);
+
+  if (!response.ok) {
+    throw new Error(
+      `Site retornou HTTP ${response.status} ${response.statusText}`,
+    );
   }
+
+  // Cancela o stream imediatamente — não precisamos do corpo
+  const reader = response.body?.getReader();
+  if (reader) await reader.cancel();
 }
 
 export async function scrapeSipros(): Promise<ScrapeResult> {

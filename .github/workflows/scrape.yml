@@ -13,13 +13,6 @@ on:
       - ".github/workflows/scrape.yml"
 
 # ── Schedule ──────────────────────────────────────────────────
-# ATENÇÃO: o site sipros.pa.gov.br BLOQUEIA IPs de datacenter
-# (US, EUA). O runner hospedado do GitHub NÃO consegue acessá-lo.
-# Para execução agendada real, use uma destas alternativas:
-#   - Self-hosted runner no Brasil
-#   - Cron local: crontab -e + bun run scripts/scrape.ts
-#   - VPS em Belém com Docker: docker run sipros-scraper
-#
 # schedule:
 #   - cron: "05,35 11-23 * * 1-6"
 
@@ -42,8 +35,17 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: Install Playwright Chromium + system dependencies
-        run: bunx playwright install --with-deps chromium
+      - name: Fix DNS for sipros.pa.gov.br (DNSSEC mal configurado)
+        run: |
+          # O domínio sipros.pa.gov.br tem DNSSEC inválido.
+          # O 8.8.8.8 (Google) e o default do Ubuntu rejeitam.
+          # O 1.1.1.1 (Cloudflare) resolve corretamente.
+          sudo sed -i 's/#DNS=/DNS=1.1.1.1 1.0.0.1/' /etc/systemd/resolved.conf
+          sudo sed -i 's/#FallbackDNS=/FallbackDNS=1.1.1.1 1.0.0.1/' /etc/systemd/resolved.conf
+          sudo sed -i 's/#DNSSEC=no/DNSSEC=no/' /etc/systemd/resolved.conf
+          sudo systemctl restart systemd-resolved
+          echo "✅ DNS configurado: 1.1.1.1 / 1.0.0.1 (DNSSEC off)"
+          dig www.sipros.pa.gov.br +short
 
       - name: Pre-flight connectivity test
         run: |
@@ -53,17 +55,21 @@ jobs:
             https://www.sipros.pa.gov.br/selecoes/disponiveis 2>&1) && {
             echo "✅ Site respondeu HTTP $HTTP_CODE"
           } || {
-            echo "❌ Site inacessível do runner GH Actions."
+            CODE=$?
             echo ""
             echo "╔══════════════════════════════════════════════════════════╗"
-            echo "║  O site sipros.pa.gov.br bloqueia IPs de datacenter.    ║"
+            echo "║  Site inacessível do runner GH Actions.                ║"
             echo "║                                                        ║"
-            echo "║  Soluções:                                             ║"
-            echo "║  1. Use um self-hosted runner no Brasil                ║"
-            echo "║  2. Rode localmente com: bun run scripts/scrape.ts     ║"
-            echo "║  3. Use Docker: docker run sipros-scraper              ║"
+            echo "║  Pode ser:                                            ║"
+            echo "║  1. DNS (verifique o passo anterior)                  ║"
+            echo "║  2. IP do datacenter bloqueado pelo site              ║"
+            echo "║                                                        ║"
+            echo "║  Alternativas:                                        ║"
+            echo "║  - Self-hosted runner no Brasil                       ║"
+            echo "║  - Cron local: veja CRON.md                           ║"
+            echo "║  - VPS + crontab: scripts/setup-vps.sh                ║"
             echo "╚══════════════════════════════════════════════════════════╝"
-            exit 1
+            exit $CODE
           }
 
       - name: Run scraper
