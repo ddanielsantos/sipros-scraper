@@ -44,6 +44,7 @@ export async function scrapeSipros(): Promise<ScrapeResult> {
         "--disable-setuid-sandbox",
         "--disable-dev-shm-usage",
         "--disable-gpu",
+        "--disable-extensions",
       ],
     });
 

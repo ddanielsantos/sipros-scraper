@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sipros-scraper
+    restart: unless-stopped
+    environment:
+      - SCRAPE_INTERVAL_MINUTES=${SCRAPE_INTERVAL:-30}
+      - DATA_FILE=/app/data/sipros.json
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - LOG_JSON=true
+      - HEADLESS=true
+    volumes:
+      - sipros-data:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "test -f /app/data/sipros.json && jq -e '.total > 0' /app/data/sipros.json > /dev/null 2>&1 || exit 1"]
+      interval: 5m
+      timeout: 10s
+      retries: 3
+      start_period: 2m
+
+  # ── (futuro) API REST ────────────────────────────────────
+  # api:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.api
+  #   container_name: sipros-api
+  #   restart: unless-stopped
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - DATA_FILE=/app/data/sipros.json
+  #     - PORT=3000
+  #   volumes:
+  #     - sipros-data:/app/data
+  #   depends_on:
+  #     scraper:
+  #       condition: service_healthy
+
+volumes:
+  sipros-data:
