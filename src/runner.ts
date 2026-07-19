@@ -40,11 +40,14 @@ export async function runScrapeCycle(
     const durationMs = Date.now() - start;
     const msg = err instanceof Error ? err.message : String(err);
 
+    const stack = err instanceof Error ? err.stack : undefined;
+
     log.error("Ciclo de scraping falhou", {
       error: msg,
+      stack,
       durationMs,
     });
 
-    return { success: false, totalProcessos: 0, durationMs, error: msg };
+    return { success: false, totalProcessos: 0, durationMs, error: msg + (stack ? `\n${stack}` : "") };
   }
 }
