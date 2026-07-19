@@ -1,20 +1,27 @@
-# ─────────────────────────────────────────────────────────
 # CRON — SIPROS Scraper
-# ─────────────────────────────────────────────────────────
-#
-# Instale no crontab do usuário:
-#   crontab -e
-# E adicione uma das linhas abaixo.
-#
-# Caminho do projeto (ajuste conforme seu ambiente):
-PATH_PROJECT=/home/user/sipros-scraper
 
-# ── Opção 1: A cada 30 minutos durante horário comercial ──
-# Roda das 6h às 22h, a cada 30 min, de segunda a sábado.
-*/30 6-22 * * 1-6 cd $PATH_PROJECT && bun run scripts/scrape.ts >> /var/log/sipros-scraper.log 2>&1
+## Na VPS
 
-# ── Opção 2: A cada 2 horas, todo dia ──
-# 0 */2 * * * cd $PATH_PROJECT && bun run scripts/scrape.ts >> /var/log/sipros-scraper.log 2>&1
+```cron
+*/30 6-22 * * 1-6 cd /home/ubuntu/sipros-scraper && bun run scripts/scrape.ts >> /home/ubuntu/sipros-scraper/logs/scraper.log 2>&1
+```
 
-# ── Opção 3: Uma vez por dia, às 8h ──
-# 0 8 * * * cd $PATH_PROJECT && bun run scripts/scrape.ts >> /var/log/sipros-scraper.log 2>&1
+## Instalação via script (recomendado)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ddanielsantos/sipros-scraper/main/scripts/setup-vps.sh | bash
+```
+
+O script faz tudo: instala dependências, corrige DNS, configura crontab e logrotate.
+
+## Na máquina local
+
+```cron
+*/30 6-22 * * 1-6 cd /caminho/sipros-scraper && bun run scripts/scrape.ts >> /caminho/sipros-scraper/logs/scraper.log 2>&1
+```
+
+## Logs
+
+```bash
+tail -f ~/sipros-scraper/logs/scraper.log
+```

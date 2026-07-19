@@ -5,16 +5,15 @@ set -euo pipefail
 # SIPROS Scraper — setup automatizado para VPS (Ubuntu 22.04+)
 # ────────────────────────────────────────────────────────────────
 # Uso:
-#   curl -fsSL https://raw.githubusercontent.com/seu-user/sipros-scraper/main/scripts/setup-vps.sh | bash
-#   ou
-#   bash scripts/setup-vps.sh
+#   curl -fsSL https://raw.githubusercontent.com/ddanielsantos/sipros-scraper/main/scripts/setup-vps.sh | bash
 # ────────────────────────────────────────────────────────────────
 
-REPO_URL="${REPO_URL:-https://github.com/seu-user/sipros-scraper.git}"
+REPO_URL="${REPO_URL:-https://github.com/ddanielsantos/sipros-scraper.git}"
 INSTALL_DIR="${INSTALL_DIR:-$HOME/sipros-scraper}"
 SCRAPE_INTERVAL="${SCRAPE_INTERVAL:-30}"  # minutos
+LOG_FILE="$INSTALL_DIR/logs/scraper.log"
 
-# Cores para output
+# Cores
 VERDE='\033[0;32m'
 AMARELO='\033[1;33m'
 AZUL='\033[0;34m'
@@ -39,19 +38,26 @@ if [ "$(free -m | awk '/^Swap:/{print $2}')" -lt 512 ]; then
   if ! grep -q '/swapfile' /etc/fstab; then
     echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
   fi
-  # Prioridade baixa para evitar swap desnecessário
   echo 10 | sudo tee /proc/sys/vm/swappiness > /dev/null
   ok "Swap de 1GB configurado."
 else
   ok "Swap já configurado ($(free -m | awk '/^Swap:/{print $2}')MB)."
 fi
 
-# ── 3. Instala dependências ─────────────────────────────────────
-info "Instalando dependências (curl, git, unzip)..."
-sudo apt-get install -y -qq curl git unzip
+# ── 3. Instala dependências de sistema ───────────────────────────
+info "Instalando dependências (curl, git, unzip, jq)..."
+sudo apt-get install -y -qq curl git unzip jq
 ok "Dependências instaladas."
 
-# ── 4. Instala Bun ──────────────────────────────────────────────
+# ── 4. Corrige DNS (sipros.pa.gov.br tem DNSSEC mal configurado) ─
+info "Corrigindo DNS para evitar erro de DNSSEC do sipros.pa.gov.br..."
+sudo sed -i 's/#DNS=/DNS=1.1.1.1 1.0.0.1/' /etc/systemd/resolved.conf 2>/dev/null || true
+sudo sed -i 's/#FallbackDNS=/FallbackDNS=1.1.1.1 1.0.0.1/' /etc/systemd/resolved.conf 2>/dev/null || true
+sudo sed -i 's/#DNSSEC=no/DNSSEC=no/' /etc/systemd/resolved.conf 2>/dev/null || true
+sudo systemctl restart systemd-resolved 2>/dev/null || true
+ok "DNS configurado (Cloudflare 1.1.1.1, DNSSEC desligado)."
+
+# ── 5. Instala Bun ──────────────────────────────────────────────
 if ! command -v bun &>/dev/null; then
   info "Instalando Bun..."
   curl -fsSL https://bun.sh/install | bash
@@ -66,7 +72,7 @@ else
   ok "Bun $(bun --version) já instalado."
 fi
 
-# ── 4. Clona / atualiza repositório ─────────────────────────────
+# ── 6. Clona / atualiza repositório ─────────────────────────────
 if [ -d "$INSTALL_DIR" ]; then
   info "Atualizando repositório existente em $INSTALL_DIR..."
   cd "$INSTALL_DIR"
@@ -81,17 +87,20 @@ fi
 
 cd "$INSTALL_DIR"
 
-# ── 5. Instala dependências do projeto ──────────────────────────
+# ── 7. Instala dependências do projeto ──────────────────────────
 info "Instalando dependências do projeto..."
 bun install --frozen-lockfile
 ok "Dependências instaladas."
 
-# ── 6. Instala Playwright + Chromium + libs ─────────────────────
+# ── 8. Instala Playwright + Chromium + libs ─────────────────────
 info "Instalando Chromium e dependências de sistema..."
 bunx playwright install --with-deps chromium
 ok "Chromium pronto."
 
-# ── 7. Cria arquivo .env ────────────────────────────────────────
+# ── 9. Cria diretórios ───────────────────────────────────────────
+mkdir -p data logs
+
+# ── 10. Cria arquivo .env ────────────────────────────────────────
 if [ ! -f .env ]; then
   info "Criando .env com valores padrão..."
   cat > .env <<-EOF
@@ -107,25 +116,23 @@ else
   ok ".env já existe."
 fi
 
-# ── 8. Cria diretório de dados ──────────────────────────────────
-mkdir -p data
-
-# ── 9. Testa execução ───────────────────────────────────────────
+# ── 11. Testa execução ───────────────────────────────────────────
 info "Testando scraping (primeira execução)..."
 if bun run scripts/scrape.ts; then
-  ok "Scraping funcionou! $(jq '.total' data/sipros.json 2>/dev/null || echo '?') processos extraídos."
+  TOTAL=$(jq '.total' data/sipros.json 2>/dev/null || echo "?")
+  ok "Scraping funcionou! $TOTAL processos extraídos."
 else
   aviso "Scraping falhou no teste. Verifique manualmente com: cd $INSTALL_DIR && bun run scripts/scrape.ts"
 fi
 
-# ── 10. Agenda crontab ──────────────────────────────────────────
+# ── 12. Agenda crontab ──────────────────────────────────────────
 CRON_EXPR="*/${SCRAPE_INTERVAL} 6-22 * * 1-6"
-CRON_JOB="${CRON_EXPR} cd ${INSTALL_DIR} && bun run scripts/scrape.ts >> /var/log/sipros-scraper.log 2>&1"
+CRON_JOB="${CRON_EXPR} cd ${INSTALL_DIR} && bun run scripts/scrape.ts >> ${LOG_FILE} 2>&1"
 
 if crontab -l 2>/dev/null | grep -q "$INSTALL_DIR"; then
   ok "Crontab já configurado para $INSTALL_DIR."
 else
-  info "Adicionando ao crontab:"
+  info "Adicionando ao crontab..."
   echo "  $CRON_JOB"
   (
     crontab -l 2>/dev/null || true
@@ -134,26 +141,7 @@ else
   ok "Crontab configurado! O scraping rodará a cada $SCRAPE_INTERVAL minutos (seg-sex, 6h-22h)."
 fi
 
-# ── 11. Configura rotação de logs ───────────────────────────────
-if command -v logrotate &>/dev/null; then
-  LOGROTATE_CONF="/etc/logrotate.d/sipros-scraper"
-  if [ ! -f "$LOGROTATE_CONF" ]; then
-    info "Configurando logrotate..."
-    sudo tee "$LOGROTATE_CONF" > /dev/null <<-EOF
-/var/log/sipros-scraper.log {
-    daily
-    rotate 30
-    compress
-    missingok
-    notifempty
-    copytruncate
-}
-EOF
-    ok "Logrotate configurado (30 dias de retenção)."
-  fi
-fi
-
-# ── 12. Resumo final ────────────────────────────────────────────
+# ── 13. Resumo final ────────────────────────────────────────────
 echo ""
 echo -e "${VERDE}╔══════════════════════════════════════════════════════════╗${RESET}"
 echo -e "${VERDE}║              SIPROS Scraper — Setup Concluído!         ║${RESET}"
@@ -162,13 +150,13 @@ echo ""
 echo "  📁  Diretório:   $INSTALL_DIR"
 echo "  📊  Dados:       $INSTALL_DIR/data/sipros.json"
 echo "  ⏰  Cron:        $CRON_EXPR (seg-sex, 6h-22h)"
-echo "  📝  Log:         /var/log/sipros-scraper.log"
+echo "  📝  Log:         $LOG_FILE"
 echo ""
 echo "  Comandos úteis:"
 echo "    cd $INSTALL_DIR"
-echo "    bun run scripts/scrape.ts        # execução manual"
-echo "    bun run scripts/scheduler.ts     # scheduler contínuo"
-echo "    crontab -l                        # ver cron"
-echo "    tail -f /var/log/sipros-scraper.log  # acompanhar logs"
-echo "    git pull                          # atualizar código"
+echo "    make scrape                 # execução manual"
+echo "    make logs                   # acompanhar logs"
+echo "    make data                   # resumo dos dados"
+echo "    make cron                   # ver crontab"
+echo "    git pull                    # atualizar código"
 echo ""
