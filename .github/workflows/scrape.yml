@@ -1,21 +1,10 @@
 name: Scrape SIPROS
 
 on:
-  # ── Agendamento ──────────────────────────────────────────────
-  schedule:
-    # A cada 30 min, de segunda a sábado, das 8h às 20h horário de Brasília (UTC-3).
-    # O cron do GH Actions é em UTC. 8h BRT = 11h UTC, 20h BRT = 23h UTC.
-    # Minutos: 05 e 35 para espaçar de outros jobs.
-    - cron: "05,35 11-23 * * 1-6"
-
-    # Também roda uma vez aos domingos às 9h BRT (12h UTC) para manter
-    # os dados atualizados no início da semana.
-    - cron: "05 12 * * 0"
-
   # ── Execução manual ──────────────────────────────────────────
   workflow_dispatch:
 
-  # ── Trigger opcional: push que altere o scraper ─────────────
+  # ── Trigger: push que altere o scraper ──────────────────────
   push:
     branches: [main]
     paths:
@@ -23,7 +12,17 @@ on:
       - "src/runner.ts"
       - ".github/workflows/scrape.yml"
 
-# Permissão para commitar no repositório
+# ── Schedule ──────────────────────────────────────────────────
+# ATENÇÃO: o site sipros.pa.gov.br BLOQUEIA IPs de datacenter
+# (US, EUA). O runner hospedado do GitHub NÃO consegue acessá-lo.
+# Para execução agendada real, use uma destas alternativas:
+#   - Self-hosted runner no Brasil
+#   - Cron local: crontab -e + bun run scripts/scrape.ts
+#   - VPS em Belém com Docker: docker run sipros-scraper
+#
+# schedule:
+#   - cron: "05,35 11-23 * * 1-6"
+
 permissions:
   contents: write
 
@@ -45,6 +44,27 @@ jobs:
 
       - name: Install Playwright Chromium + system dependencies
         run: bunx playwright install --with-deps chromium
+
+      - name: Pre-flight connectivity test
+        run: |
+          echo "🌐 Verificando acesso ao site..."
+          HTTP_CODE=$(curl -sSf -o /dev/null -w "%{http_code}" \
+            --connect-timeout 10 --max-time 20 \
+            https://www.sipros.pa.gov.br/selecoes/disponiveis 2>&1) && {
+            echo "✅ Site respondeu HTTP $HTTP_CODE"
+          } || {
+            echo "❌ Site inacessível do runner GH Actions."
+            echo ""
+            echo "╔══════════════════════════════════════════════════════════╗"
+            echo "║  O site sipros.pa.gov.br bloqueia IPs de datacenter.    ║"
+            echo "║                                                        ║"
+            echo "║  Soluções:                                             ║"
+            echo "║  1. Use um self-hosted runner no Brasil                ║"
+            echo "║  2. Rode localmente com: bun run scripts/scrape.ts     ║"
+            echo "║  3. Use Docker: docker run sipros-scraper              ║"
+            echo "╚══════════════════════════════════════════════════════════╝"
+            exit 1
+          }
 
       - name: Run scraper
         run: bun run scripts/scrape.ts
@@ -69,7 +89,6 @@ jobs:
           git config user.name "sipros-scraper[bot]"
           git config user.email "sipros-scraper[bot]@users.noreply.github.com"
 
-          # Só commit se houve mudança
           if [ -n "$(git status --porcelain data/sipros.json)" ]; then
             git add data/sipros.json
             git commit -m "chore(data): atualizar processos seletivos [skip ci]"

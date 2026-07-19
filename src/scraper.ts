@@ -4,7 +4,35 @@ import type { ProcessoSeletivo, ScrapeResult } from "./types";
 
 const URL = "https://www.sipros.pa.gov.br/selecoes/disponiveis";
 
+/**
+ * Verifica rapidamente se o site está acessível antes de abrir o browser.
+ * Isso evita timeouts longos e separa problema de rede vs. problema de scraping.
+ */
+async function checkReachability(url: string): Promise<void> {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 15_000);
+
+  try {
+    const response = await fetch(url, {
+      method: "HEAD",
+      signal: controller.signal,
+      redirect: "follow",
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        `Site retornou HTTP ${response.status} ${response.statusText}`,
+      );
+    }
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export async function scrapeSipros(): Promise<ScrapeResult> {
+  // ── Pre-flight: verifica conectividade antes de abrir o navegador ──
+  await checkReachability(URL);
+
   let browser: Browser | null = null;
   let page: Page | null = null;
 
@@ -26,19 +54,18 @@ export async function scrapeSipros(): Promise<ScrapeResult> {
     });
 
     // Timeout padrão para todos os waitFor* da página
-    page.setDefaultTimeout(30_000);
+    page.setDefaultTimeout(60_000);
 
-    // `domcontentloaded` = HTML parseado, sem esperar fonts/analytics/images
-    await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 30_000 });
+    await page.goto(URL, { waitUntil: "domcontentloaded", timeout: 120_000 });
 
     // Aguarda os cards de processos seletivos estarem no DOM
     await page.waitForSelector(
       "div.pricing-area div.row > div.col-sm-4.plan.price-one",
-      { timeout: 20_000 },
+      { timeout: 30_000 },
     );
 
     // Pausa para as animações CSS (wow.js) finalizarem
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
 
     const processos: ProcessoSeletivo[] = await page.evaluate(() => {
       const cards = document.querySelectorAll<HTMLDivElement>(
@@ -121,18 +148,16 @@ export async function scrapeSipros(): Promise<ScrapeResult> {
       processos,
     };
   } catch (err) {
-    // ── Debug: salva screenshot e HTML do estado da página ──────
+    // ── Debug artefacts ──────────────────────────────────────────
     if (page) {
       await page
         .screenshot({ path: "error-screenshot.png", fullPage: true })
         .catch(() => {});
-
       const html = await page
         .content()
         .catch(() => "<erro ao capturar HTML>");
       await writeFile("error-page.html", html, "utf-8").catch(() => {});
     }
-
     throw err;
   } finally {
     if (browser) {

@@ -7,47 +7,82 @@ export interface ScrapeCycleResult {
   success: boolean;
   totalProcessos: number;
   durationMs: number;
+  attempt: number;
   error?: string;
 }
 
+const MAX_ATTEMPTS = 3;
+const BASE_DELAY_MS = 10_000; // 10s
+
 /**
- * Executa um ciclo completo: scraping → persistência.
- * Pode ser chamado tanto pelo cron quanto pelo scheduler.
+ * Executa um ciclo completo: verificação de rede → scraping → persistência.
+ * Inclui retry automático com backoff exponencial para tolerar
+ * instabilidades de rede (comuns em ambientes CI).
  */
 export async function runScrapeCycle(
   repo: ProcessoRepository,
   config: Config,
   log: Logger,
 ): Promise<ScrapeCycleResult> {
-  const start = Date.now();
+  let lastError: string | undefined;
 
-  try {
-    log.info("Iniciando ciclo de scraping", { url: config.scrapeUrl });
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const start = Date.now();
 
-    const result = await scrapeSipros();
+    try {
+      log.info(`Iniciando ciclo de scraping (tentativa ${attempt}/${MAX_ATTEMPTS})`, {
+        url: config.scrapeUrl,
+      });
 
-    await repo.saveAll(result.processos);
+      const result = await scrapeSipros();
 
-    const durationMs = Date.now() - start;
+      await repo.saveAll(result.processos);
 
-    log.info("Ciclo concluído com sucesso", {
-      total: result.total,
-      durationMs,
-    });
+      const durationMs = Date.now() - start;
 
-    return { success: true, totalProcessos: result.total, durationMs };
-  } catch (err) {
-    const durationMs = Date.now() - start;
-    const msg = err instanceof Error ? err.message : String(err);
+      log.info("Ciclo concluído com sucesso", {
+        total: result.total,
+        durationMs,
+        attempt,
+      });
 
-    const stack = err instanceof Error ? err.stack : undefined;
+      return { success: true, totalProcessos: result.total, durationMs, attempt };
+    } catch (err) {
+      const durationMs = Date.now() - start;
+      const msg = err instanceof Error ? err.message : String(err);
+      const stack = err instanceof Error ? err.stack : undefined;
 
-    log.error("Ciclo de scraping falhou", {
-      error: msg,
-      stack,
-      durationMs,
-    });
+      lastError = msg;
 
-    return { success: false, totalProcessos: 0, durationMs, error: msg + (stack ? `\n${stack}` : "") };
+      log.error("Ciclo de scraping falhou", {
+        error: msg,
+        stack,
+        durationMs,
+        attempt,
+      });
+
+      // Se ainda há tentativas, espera com backoff antes de retentar
+      if (attempt < MAX_ATTEMPTS) {
+        const delay = BASE_DELAY_MS * Math.pow(2, attempt - 1);
+        log.info(`Aguardando ${delay}ms antes da próxima tentativa...`, {
+          nextAttempt: attempt + 1,
+          delayMs: delay,
+        });
+        await sleep(delay);
+      }
+    }
   }
+
+  // Todas as tentativas esgotadas
+  return {
+    success: false,
+    totalProcessos: 0,
+    durationMs: 0,
+    attempt: MAX_ATTEMPTS,
+    error: lastError,
+  };
+}
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
