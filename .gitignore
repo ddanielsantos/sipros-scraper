@@ -15,6 +15,10 @@ logs
 _.log
 report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
+# dados gerados pelo scraper (muda a cada execução)
+data/*.json
+!data/.gitkeep
+
 # debug artifacts do scraper
 error-screenshot.png
 error-page.html
