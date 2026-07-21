@@ -29,10 +29,18 @@ async function main() {
   log.info("=== Demonstração de queries ===");
 
   const todos = await repo.findAll();
-  log.info(`Total no repositório`, { total: todos.length });
+  const ativos = todos.filter((p) => p.ativo);
+  const inativos = todos.filter((p) => !p.ativo);
+  log.info(`Repositório`, {
+    total: todos.length,
+    ativos: ativos.length,
+    inativos: inativos.length,
+  });
 
-  const primeiro = await repo.findById(todos[0]!.id);
-  log.info(`Busca por ID`, { id: primeiro?.id, orgao: primeiro?.orgao });
+  if (ativos.length > 0) {
+    const primeiro = ativos[0]!;
+    log.info(`Busca por ID`, { id: primeiro.id, orgao: primeiro.orgao });
+  }
 
   const paginado = await repo.search({ page: 1, page_size: 5 });
   log.info(`Paginação`, {

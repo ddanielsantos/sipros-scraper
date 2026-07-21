@@ -1,4 +1,9 @@
-import type { ProcessoSeletivo, SearchFilters, PaginatedResult } from "./types";
+import type {
+  ProcessoSeletivo,
+  ProcessoPersistido,
+  SearchFilters,
+  PaginatedResult,
+} from "./types";
 
 /**
  * Contract for persisting and querying processos seletivos.
@@ -7,15 +12,15 @@ import type { ProcessoSeletivo, SearchFilters, PaginatedResult } from "./types";
  * or any other backend — the scraper and API never need to know which.
  */
 export interface ProcessoRepository {
-  /** Substitui todo o dataset por um novo lote (upsert pelo id). */
+  /** Faz merge dos processos scraping com os já salvos (upsert + marcar inativos). */
   saveAll(processos: ProcessoSeletivo[]): Promise<void>;
 
-  /** Retorna todos os processos salvos. */
-  findAll(): Promise<ProcessoSeletivo[]>;
+  /** Retorna todos os processos salvos (ativos e inativos). */
+  findAll(): Promise<ProcessoPersistido[]>;
 
   /** Busca um processo pelo ID numérico. */
-  findById(id: number): Promise<ProcessoSeletivo | null>;
+  findById(id: number): Promise<ProcessoPersistido | null>;
 
   /** Busca paginada com filtros combinados. */
-  search(filters: SearchFilters): Promise<PaginatedResult<ProcessoSeletivo>>;
+  search(filters: SearchFilters): Promise<PaginatedResult<ProcessoPersistido>>;
 }

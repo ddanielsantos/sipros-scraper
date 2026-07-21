@@ -10,7 +10,7 @@ set -euo pipefail
 
 REPO_URL="${REPO_URL:-https://github.com/ddanielsantos/sipros-scraper.git}"
 INSTALL_DIR="${INSTALL_DIR:-$HOME/sipros-scraper}"
-SCRAPE_INTERVAL="${SCRAPE_INTERVAL:-30}"  # minutos
+SCRAPE_INTERVAL="${SCRAPE_INTERVAL:-15}"  # minutos
 LOG_FILE="$INSTALL_DIR/logs/scraper.log"
 
 # Cores
