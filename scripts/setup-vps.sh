@@ -126,8 +126,9 @@ else
 fi
 
 # ── 12. Agenda crontab ──────────────────────────────────────────
+BUN_PATH="$HOME/.bun/bin/bun"
 CRON_EXPR="*/${SCRAPE_INTERVAL} 6-22 * * 1-6"
-CRON_JOB="${CRON_EXPR} cd ${INSTALL_DIR} && bun run scripts/scrape.ts >> ${LOG_FILE} 2>&1"
+CRON_JOB="${CRON_EXPR} cd ${INSTALL_DIR} && ${BUN_PATH} run scripts/scrape.ts >> ${LOG_FILE} 2>&1"
 
 if crontab -l 2>/dev/null | grep -q "$INSTALL_DIR"; then
   ok "Crontab já configurado para $INSTALL_DIR."
