@@ -1,4 +1,4 @@
-.PHONY: scrape scheduler logs cron docker-build docker-up docker-logs setup help
+.PHONY: scrape scheduler logs cron bootstrap docker-build docker-up docker-logs setup update data help
 
 help: ## Mostra esta ajuda
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
@@ -22,12 +22,8 @@ logs: ## Mostra últimos logs
 cron: ## Mostra crontab atual
 	@crontab -l 2>/dev/null || echo "Nenhum crontab configurado."
 
-bootstrap: ## Setup completo de uma VPS nova (scripts/setup-vps.sh)
-	@if [ -f scripts/setup-vps.sh ]; then \
-		bash scripts/setup-vps.sh; \
-	else \
-		curl -fsSL https://raw.githubusercontent.com/ddanielsantos/sipros-scraper/main/scripts/setup-vps.sh | bash; \
-	fi
+bootstrap: ## Setup completo — sempre baixa a última versão do GitHub
+	curl -fsSL https://raw.githubusercontent.com/ddanielsantos/sipros-scraper/main/scripts/setup-vps.sh | bash
 
 # ── Docker ─────────────────────────────────────────────────────
 
