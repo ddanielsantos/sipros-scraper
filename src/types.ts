@@ -4,7 +4,12 @@ export interface ProcessoSeletivo {
   orgao: string;
   titulo: string;
   inscricoes: string;
-  vencimento_base: string;
+  /** Menor valor do vencimento base (ex: 1399.20) */
+  vencimento_min: number | null;
+  /** Maior valor do vencimento base (ex: 1828.20). Igual a min quando é valor único */
+  vencimento_max: number | null;
+  /** Texto original do vencimento (ex: "De R$ 1.399,20 a R$ 1.828,20") */
+  vencimento_original: string;
   cargos: string;
   vagas: number;
   link: string;
@@ -43,6 +48,8 @@ export interface SearchFilters {
   cargo?: string;
   vagas_min?: number;
   vagas_max?: number;
+  vencimento_min?: number;
+  vencimento_max?: number;
   inscricao_ate?: string;
   termo?: string;
   page?: number;

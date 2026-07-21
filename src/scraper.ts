@@ -112,10 +112,41 @@ export async function scrapeSipros(): Promise<ScrapeResult> {
             textItems.find((t) => t.startsWith("Inscrições")) ?? "";
           const inscricoes = stripPrefix(inscricoesRaw);
 
+          // ── Parse do vencimento ──────────────────────────────
           const vencimentoRaw =
             textItems.find((t) => t.startsWith("Vencimento Base")) ?? "";
-          const vencimento_base = stripPrefix(vencimentoRaw);
+          const vencimento_original = stripPrefix(vencimentoRaw);
 
+          const parseReais = (str: string): number | null => {
+            // "R$ 1.399,20" → 1399.20
+            const cleaned = str
+              .replace(/^R\$\s*/i, "")
+              .replace(/\./g, "")
+              .replace(/,/, ".");
+            const n = parseFloat(cleaned);
+            return isNaN(n) ? null : n;
+          };
+
+          let vencimento_min: number | null = null;
+          let vencimento_max: number | null = null;
+
+          if (vencimento_original) {
+            // Formato range: "De R$ 1.399,20 a R$ 1.828,20"
+            const rangeMatch = vencimento_original.match(
+              /(?:De\s*)?R\$\s*([\d.]+,[\d]+)\s*a\s+R\$\s*([\d.]+,[\d]+)/i,
+            );
+            if (rangeMatch) {
+              vencimento_min = parseReais(rangeMatch[1]!);
+              vencimento_max = parseReais(rangeMatch[2]!);
+            } else {
+              // Valor único: "R$ 2.559,37"
+              const val = parseReais(vencimento_original);
+              vencimento_min = val;
+              vencimento_max = val;
+            }
+          }
+
+          // ── Vagas ────────────────────────────────────────────
           const vagasRaw = textItems.find((t) => t.startsWith("Vagas")) ?? "";
           const vagasMatch = vagasRaw.match(/(\d+)/);
           const vagas = vagasMatch ? parseInt(vagasMatch[1]!, 10) : 0;
@@ -137,7 +168,9 @@ export async function scrapeSipros(): Promise<ScrapeResult> {
             orgao,
             titulo,
             inscricoes,
-            vencimento_base,
+            vencimento_min,
+            vencimento_max,
+            vencimento_original,
             cargos,
             vagas,
             link,

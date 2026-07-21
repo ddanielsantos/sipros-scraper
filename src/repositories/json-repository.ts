@@ -47,7 +47,9 @@ export class JsonRepository implements ProcessoRepository {
         existente.orgao = p.orgao;
         existente.titulo = p.titulo;
         existente.inscricoes = p.inscricoes;
-        existente.vencimento_base = p.vencimento_base;
+        existente.vencimento_min = p.vencimento_min;
+        existente.vencimento_max = p.vencimento_max;
+        existente.vencimento_original = p.vencimento_original;
         existente.cargos = p.cargos;
         existente.vagas = p.vagas;
         existente.link = p.link;
@@ -125,6 +127,18 @@ export class JsonRepository implements ProcessoRepository {
 
     if (filters.vagas_max !== undefined) {
       filtered = filtered.filter((p) => p.vagas <= filters.vagas_max!);
+    }
+
+    if (filters.vencimento_min !== undefined) {
+      filtered = filtered.filter(
+        (p) => p.vencimento_max !== null && p.vencimento_max >= filters.vencimento_min!,
+      );
+    }
+
+    if (filters.vencimento_max !== undefined) {
+      filtered = filtered.filter(
+        (p) => p.vencimento_min !== null && p.vencimento_min <= filters.vencimento_max!,
+      );
     }
 
     if (filters.inscricao_ate) {
